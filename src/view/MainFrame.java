@@ -9,12 +9,4 @@ public class MainFrame extends JFrame {
 
     }
 
-    public void switchPanel(Panel panel){
-        this.removeAll();
-        this.invalidate();
-
-        this.setContentPane(panel);
-
-        this.revalidate();
-    }
 }
