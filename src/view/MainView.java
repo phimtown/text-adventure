@@ -4,13 +4,13 @@ import controller.MainController;
 
 import javax.swing.*;
 
-public class EndView {
+public class MainView {
 
     private JPanel panel;
     private MainFrame mainFrame;
     private MainController mainController;
 
-    public EndView(MainFrame mainFrame, MainController mainController) {
+    public MainView(MainFrame mainFrame, MainController mainController) {
         this.mainFrame = mainFrame;
         this.mainController = mainController;
     }

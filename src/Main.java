@@ -2,9 +2,9 @@ import controller.MainController;
 
 public class Main {
 
-    private MainController mainController;
+    private static MainController mainController;
 
     public static void main(String[] args) {
-
+        mainController = new MainController();
     }
 }
