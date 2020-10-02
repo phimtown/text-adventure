@@ -4,6 +4,7 @@ import controller.MainController;
 import model.Player;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MainFrame extends JFrame {
 
@@ -11,12 +12,16 @@ public class MainFrame extends JFrame {
     public StartView startView;
     public EndView endView;
 
-    public MainFrame(MainController mainController, String name, int x, int y, int width, int height){
+    public MainFrame(MainController mainController, String name, int width, int height){
         this.mainController = mainController;
         this.startView = new StartView(this, mainController);
         this.endView = new EndView(this, mainController);
 
-        this.setLocation(x,y);
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        int w = gd.getDisplayMode().getWidth();
+        int h = gd.getDisplayMode().getHeight();
+
+        this.setLocation(w/2 - width/2, h/2 - height/2);
         this.setSize(width,height);
         this.setTitle(name);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
