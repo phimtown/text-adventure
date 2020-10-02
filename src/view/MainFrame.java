@@ -3,7 +3,6 @@ package view;
 import controller.MainController;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class MainFrame extends JFrame {
 
@@ -36,7 +35,14 @@ public class MainFrame extends JFrame {
     }
 
     public void play(){
-        switchToPanel(gameView.getPanel());
+        this.switchToPanel(gameView.getPanel());
     }
 
+    public void restart() {
+        this.switchToPanel(startView.getPanel());
+    }
+
+    public void end() {
+        this.switchToPanel(endView.getPanel());
+    }
 }

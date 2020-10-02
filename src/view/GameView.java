@@ -12,7 +12,8 @@ public class GameView {
     private JButton a2Button;
     private JButton a3Button;
     private JButton a4Button;
-    private JLabel liveLabel;
+    private JLabel hpLabel;
+    private JLabel atkLabel;
     private MainFrame mainFrame;
     private MainController mainController;
 

@@ -6,7 +6,7 @@ public class MainController {
 
     private MainFrame mainFrame;
 
-    public MainController(){
-        mainFrame = new MainFrame(this, "Text Adventure", 100, 100, 1000, 600);
+    public MainController() {
+        mainFrame = new MainFrame(this, "Text Adventure!!", 500, 500, 800, 600);
     }
 }
