@@ -19,9 +19,6 @@ public class GameView {
     public GameView(MainFrame mainFrame, MainController mainController) {
         this.mainFrame = mainFrame;
         this.mainController = mainController;
-
-        textOutput.setText("test");
-        textOutput.setText(textOutput.getText()+"/ln asdf");
     }
 
     public JPanel getPanel() {
