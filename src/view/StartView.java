@@ -1,6 +1,7 @@
 package view;
 
 import controller.MainController;
+import model.Player;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,7 @@ public class StartView {
     private JPanel panel;
     private JButton startButton;
     private JButton exitButton;
+    private JTextField usernameTextField;
     private MainFrame mainFrame;
     private MainController mainController;
 
@@ -29,7 +31,9 @@ public class StartView {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainFrame.play();
+                if(usernameTextField.getText() != null) {
+                    mainFrame.play(new Player(usernameTextField.getText(), 10, 0, 0, 0));
+                }
             }
         });
         exitButton.addActionListener(new ActionListener() {

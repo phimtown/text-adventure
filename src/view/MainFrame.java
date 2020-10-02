@@ -1,19 +1,18 @@
 package view;
 
 import controller.MainController;
+import model.Player;
 
 import javax.swing.*;
 
 public class MainFrame extends JFrame {
 
     public MainController mainController;
-    public GameView gameView;
     public StartView startView;
     public EndView endView;
 
     public MainFrame(MainController mainController, String name, int x, int y, int width, int height){
         this.mainController = mainController;
-        this.gameView = new GameView(this, mainController);
         this.startView = new StartView(this, mainController);
         this.endView = new EndView(this, mainController);
 
@@ -34,7 +33,8 @@ public class MainFrame extends JFrame {
         this.repaint();
     }
 
-    public void play(){
+    public void play(Player p){
+        GameView gameView = new GameView(this, mainController, p);
         this.switchToPanel(gameView.getPanel());
     }
 
