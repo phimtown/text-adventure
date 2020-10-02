@@ -28,25 +28,25 @@ public class GameView {
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //mainController.answer(1);
+                mainController.answer(1);
             }
         });
         a2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //mainController.answer(2);
+                mainController.answer(2);
             }
         });
         a3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //mainController.answer(3);
+                mainController.answer(3);
             }
         });
         a4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //mainController.answer(4);
+                mainController.answer(4);
             }
         });
     }
