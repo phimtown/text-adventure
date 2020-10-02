@@ -8,7 +8,7 @@ public class MainController {
     private StoryController storyController;
 
     public MainController() {
-        mainFrame = new MainFrame(this, "Text Adventure!!", 500, 500, 800, 600);
+        mainFrame = new MainFrame(this, "Text Adventure!!", 800, 600);
         storyController = new StoryController();
     }
 
