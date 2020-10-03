@@ -22,17 +22,20 @@ public class StoryController {
     }
 
     private String getStoryFromTxt(){
-        String help = "test";
+        String help = "";
 
         try {
             in = new BufferedReader(new FileReader(storyTXT));
-            String str = "0";
+            String str = "";
             for(int i = 0; i<story.length; i++){
-                str = "."+story[i];
+                str = str+story[i];
             }
-            /*while() {
 
-            }*/
+            String line = in.readLine();
+            while(!line.startsWith(str)&&line!=null) {
+                line = in.readLine();
+            }
+            help = line.replaceFirst(str, "");
 
         } catch (IOException e) {
             e.printStackTrace();
