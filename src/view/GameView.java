@@ -25,14 +25,12 @@ public class GameView {
     //Referenzen
     private MainFrame mainFrame;
     private MainController mainController;
-    private Player player;
 
     public GameView(MainFrame mainFrame, MainController mainController, Player p) {
         this.mainFrame = mainFrame;
         this.mainController = mainController;
-        this.player = p;
 
-        mainController.startNewEvent();
+        this.loadPlayer(p);
         buttons();
     }
 
@@ -40,30 +38,30 @@ public class GameView {
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(1));
+                mainController.answer(1);
             }
         });
         a2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(2));
+                mainController.answer(2);
             }
         });
         a3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(3));
+                mainController.answer(3);
             }
         });
         a4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(4));
+                mainController.answer(4);
             }
         });
     }
 
-    private void loadPlayer() {
+    public void loadPlayer(Player player) {
         usernameLabel.setText(player.getUsername());
         atkLabel.setText(String.valueOf(player.getAtk()));
         defLabel.setText(String.valueOf(player.getDef()));
@@ -75,7 +73,31 @@ public class GameView {
         return panel;
     }
 
-    public void setText(String text){
-        textOutput.setText(textOutput.getText()+text);
+    public void addText(String text){
+        textOutput.setText(textOutput.getText()+text+"\n");
+    }
+
+    public void deactivateAllButtons(){
+        a1Button.setEnabled(false);
+        a2Button.setEnabled(false);
+        a3Button.setEnabled(false);
+        a4Button.setEnabled(false);
+    }
+
+    public void activateButton(int i){
+        switch (i){
+            case 1:
+                a1Button.setEnabled(true);
+                break;
+            case 2:
+                a2Button.setEnabled(true);
+                break;
+            case 3:
+                a3Button.setEnabled(true);
+                break;
+            case 4:
+                a4Button.setEnabled(true);
+                break;
+        }
     }
 }

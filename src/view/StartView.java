@@ -32,7 +32,8 @@ public class StartView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(usernameTextField.getText() != null) {
-                    mainFrame.play(new Player(usernameTextField.getText(), 10, 0, 0, 0));
+                    mainController.setPlayer(new Player(usernameTextField.getText(), 10, 0, 0, 0));
+                    mainFrame.play(mainController.getPlayer());
                 }
             }
         });

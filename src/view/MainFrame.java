@@ -41,6 +41,7 @@ public class MainFrame extends JFrame {
     public void play(Player p){
         gameView = new GameView(this, mainController, p);
         this.switchToPanel(gameView.getPanel());
+        mainController.startNewEvent();
     }
 
     public void restart() {
@@ -54,6 +55,18 @@ public class MainFrame extends JFrame {
     }
 
     public void setText(String text){
-        gameView.setText(text);
+        this.gameView.addText(text);
+    }
+
+    public void deactivateAllButtons(){
+        gameView.deactivateAllButtons();
+    }
+
+    public void activateButton(int i){
+        gameView.activateButton(i);
+    }
+
+    public void updatePlayer(Player player){
+        gameView.loadPlayer(player);
     }
 }
