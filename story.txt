@@ -1,26 +1,28 @@
-0 Wald
-
-01 Bär
-02 Hase
-03 Baum
-04 Haus
-
-011 Bär tot
-012 Bär lebt
-013 Bär lk
-014 Bär lkjadfslkjsdfa
-
-021
-022
-023
-024
-
-031
-032
-033
-034
-
-041
-042
-043
-044
+***
+    Irgendeine dumme Einleitung
+    **
+        Eine Auswahlmöglichkeit...
+        *
+            Deine Wahl war...BESCHISSEN!
+            #1
+                -100
+            #2
+                -3
+            #3
+                +14
+            #4
+                +33
+    **
+        Weitere Auswahl...
+        *
+            Die Wahl war super!
+            #1
+                +50
+            #2
+                -3
+            #3
+                +14
+            #4
+                +33
+***
+    Weitere Einleitung für ein neues Event
