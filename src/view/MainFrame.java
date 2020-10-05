@@ -10,6 +10,7 @@ public class MainFrame extends JFrame {
 
     public MainController mainController;
     public StartView startView;
+    public GameView gameView;
     public EndView endView;
 
     public MainFrame(MainController mainController, String name, int width, int height){
@@ -38,7 +39,7 @@ public class MainFrame extends JFrame {
     }
 
     public void play(Player p){
-        GameView gameView = new GameView(this, mainController, p);
+        gameView = new GameView(this, mainController, p);
         this.switchToPanel(gameView.getPanel());
     }
 
@@ -50,5 +51,9 @@ public class MainFrame extends JFrame {
         //String[] stats: [0] ATK, [1] DEF, [2] EXP
         EndView endView = new EndView(this, mainController, stats);
         this.switchToPanel(endView.getPanel());
+    }
+
+    public void setText(String text){
+        gameView.setText(text);
     }
 }

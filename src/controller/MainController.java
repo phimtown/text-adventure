@@ -9,10 +9,13 @@ public class MainController {
 
     public MainController() {
         mainFrame = new MainFrame(this, "Text Adventure!!", 800, 600);
-        storyController = new StoryController();
+        storyController = new StoryController(this);
+        storyController.getStoryFromTxt();
     }
 
-    public String answer(int answer){
-        return storyController.answer(answer);
+    public void startNewEvent(){
+        storyController.startNewEvent();
+        mainFrame.setText(storyController.getActEvent().getIntroduction());
     }
+
 }

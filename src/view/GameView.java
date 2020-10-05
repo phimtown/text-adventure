@@ -32,7 +32,7 @@ public class GameView {
         this.mainController = mainController;
         this.player = p;
 
-        textOutput.setText(mainController.answer(0));
+        mainController.startNewEvent();
         buttons();
     }
 
@@ -40,25 +40,25 @@ public class GameView {
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(1));
+                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(1));
             }
         });
         a2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(2));
+                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(2));
             }
         });
         a3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(3));
+                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(3));
             }
         });
         a4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(4));
+                //textOutput.setText(textOutput.getText() + "\n" + mainController.answer(4));
             }
         });
     }
@@ -73,5 +73,9 @@ public class GameView {
 
     public JPanel getPanel() {
         return panel;
+    }
+
+    public void setText(String text){
+        textOutput.setText(textOutput.getText()+text);
     }
 }
