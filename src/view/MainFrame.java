@@ -16,7 +16,6 @@ public class MainFrame extends JFrame {
     public MainFrame(MainController mainController, String name, int width, int height){
         this.mainController = mainController;
         this.startView = new StartView(this, mainController);
-        this.endView = new EndView(this, mainController);
 
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int w = gd.getDisplayMode().getWidth();
@@ -48,7 +47,9 @@ public class MainFrame extends JFrame {
         this.switchToPanel(startView.getPanel());
     }
 
-    public void end() {
+    public void end(String[] stats) {
+        //String[] stats: [0] ATK, [1] DEF, [2] EXP
+        EndView endView = new EndView(this, mainController, stats);
         this.switchToPanel(endView.getPanel());
     }
 
