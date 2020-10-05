@@ -31,6 +31,8 @@ public class GameView {
         this.mainFrame = mainFrame;
         this.mainController = mainController;
         this.player = p;
+
+        textOutput.setText(mainController.answer(0));
         buttons();
     }
 
