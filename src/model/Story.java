@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Story {
     private Event[] allEvents = new Event[0];
