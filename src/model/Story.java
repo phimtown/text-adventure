@@ -1,8 +1,9 @@
-package Model;
+package model;
 
 public class Story {
-    private Event[] allEvents = new Event[0];
+    public Story() {}
 
+    private Event[] allEvents = new Event[0];
 
     public void insertNewEvent() {
         Event[] tmpEventArr = new Event[allEvents.length + 1];

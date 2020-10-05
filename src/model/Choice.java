@@ -1,6 +1,9 @@
-package Model;
+package model;
 
 public class Choice {
+
+    public Choice() {}
+
     private String choiceIntro = "";
     private String choiceOutcome = "";
     private int par1 = 0, par2 = 0, par3 = 0, par4 = 0;

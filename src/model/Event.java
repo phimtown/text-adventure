@@ -1,6 +1,9 @@
-package Model;
+package model;
 
 public class Event {
+
+    public Event() {}
+
     private String introduction = "";
     private Choice[] allChoices = new Choice[0];
 
