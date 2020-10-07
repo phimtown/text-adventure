@@ -54,7 +54,7 @@ public class MainFrame extends JFrame {
         this.switchToPanel(endView.getPanel());
     }
 
-    public void setText(String text){
+    public void addText(String text){
         this.gameView.addText(text);
     }
 
