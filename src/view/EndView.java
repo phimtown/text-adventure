@@ -21,7 +21,7 @@ public class EndView {
     public EndView(MainFrame mainFrame, MainController mainController, String[] stats) {
         this.mainFrame = mainFrame;
         this.mainController = mainController;
-        statsLabel.setText("You've ended  with following stats:\nATK: " + stats[0] + "\nDEF: " + stats[1] + "\nEXP: " + stats[2]);
+        statsLabel.setText("You've ended  with following stats:\n  ATK: " + stats[0] + "\n  DEF: " + stats[1] + "\n  EXP: " + stats[2]);
         startAgainButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

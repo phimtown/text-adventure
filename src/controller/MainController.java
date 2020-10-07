@@ -37,8 +37,16 @@ public class MainController {
         player.setDef(player.getDef()+storyController.getActEvent().getAllChoices()[answer-1].getPar4());
         mainFrame.updatePlayer(player);
 
-        mainFrame.setText("\n");
-        startNewEvent();
+        if(player.getHp()>0) {
+            mainFrame.setText("\n");
+            startNewEvent();
+        }else{
+            String[] stats = new String[3];
+            stats[0] = String.valueOf(player.getAtk());
+            stats[1] = String.valueOf(player.getDef());
+            stats[2] = String.valueOf(player.getExp());
+            mainFrame.end(stats);
+        }
     }
 
     public void setPlayer(Player player){

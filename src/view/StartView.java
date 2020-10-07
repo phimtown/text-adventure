@@ -31,8 +31,8 @@ public class StartView {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(usernameTextField.getText() != null) {
-                    mainController.setPlayer(new Player(usernameTextField.getText(), 10, 0, 0, 0));
+                if(!usernameTextField.getText().isEmpty()) {
+                    mainController.setPlayer(new Player(usernameTextField.getText(), 100, 3, 3, 0));
                     mainFrame.play(mainController.getPlayer());
                 }
             }
