@@ -2,11 +2,17 @@ package model;
 
 public class Player extends Creature {
 
-
-    private String username;
+    //Attribute
     private int exp;
     private int eventsDone;
 
+    //Referenzen
+    private String username;
+
+    /*
+    Ein Objekt der Klasse Wolf wird erzeugt und übergibt hierbei die parameter in den Konstruktor von Creature.
+    Die Attribute exp und eventsDone werden auf 0 gesetzt.
+     */
     public Player(String username, int hp, int atk, int def){
         super(username, hp, atk, def);
         this.exp = 0;

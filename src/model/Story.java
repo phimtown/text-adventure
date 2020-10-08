@@ -1,10 +1,20 @@
 package model;
 
 public class Story {
-    public Story() {}
 
+    //Referenzen
     private Event[] allEvents = new Event[0];
 
+    /*
+    Ein Objekt der Klasse Story wird erzeugt.
+     */
+    public Story() {}
+
+    /*
+    Es wird ein neues Array der Klasse Event, welches um einen Platz größer ist, erstellt.
+    Alle werte von allEvents werden übertragen und an den letzten Platz ein neues Event  erstellt.
+    Zum Schluss wird allEvents mit dem neuen Array überschrieben.
+     */
     public void insertNewEvent() {
         Event[] tmpEventArr = new Event[allEvents.length + 1];
         for (int i = 0; i < allEvents.length; i++) {
@@ -14,6 +24,10 @@ public class Story {
         allEvents = tmpEventArr;
     }
 
+    /*
+    Es wird ein neues Array von Events erstellt, mit einem Index weniger.
+    Alle werte bis auf dem des Indexes des Parameters werden kopiert und anschließend allEvents mit dem neuem Array überschrieben.
+     */
     public void deleteEventByIndex(int index) {
         if (index < allEvents.length && index >= 0) {
             Event[] tmpEventArr = new Event[allEvents.length - 1];

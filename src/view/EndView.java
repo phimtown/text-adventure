@@ -16,7 +16,12 @@ public class EndView {
 
     //String[] stats: [0] ATK, [1] DEF, [2] EXP
 
-
+    /*
+    Ein Objekt der Klasse EndView wird erzeugt.
+    Wenn a == null ist, gibt das Label what aus, dass man verloren hat, sonst, dass man gewonnen hat.
+    Danach gibt das Label statsLabel die stats des Spielers aus.
+    Zum Schluss wird die Methode createListeners ausgeführt.
+     */
     public EndView(MainFrame mainFrame, String[] stats, int a) {
         this.mainFrame = mainFrame;
         if(a == 0) {
@@ -33,6 +38,9 @@ public class EndView {
         return panel;
     }
 
+    /*
+    Dem Button startAgainButton wird ein Actionlistener zugewiesen, der die Methode restart in mainFrame ausführt.
+     */
     private void createListeners(){
         startAgainButton.addActionListener(new ActionListener() {
             @Override

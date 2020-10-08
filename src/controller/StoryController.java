@@ -15,11 +15,17 @@ public class StoryController {
 
     private Event actEvent;
 
+    /*
+    Ein Objekt der Klasse StoryController wird erzeugt und instanziiert ein Objekt der Klasse File und Story.
+     */
     public StoryController() {
         storyTXT = new File("story.txt");
         story = new Story();
     }
 
+    /*
+    Es wird mit einem Scanner für bestimmte Zeichen in einer Textdatei ein neues Event und eine neue Choice für dieses Event und parameter für diese Choice erstellt und abgespeichert.
+     */
     public void getStoryFromTxt(){
         try {
             in = new Scanner(storyTXT);
@@ -53,9 +59,13 @@ public class StoryController {
         }
     }
 
+    /*
+    activeEvent wird ein zufälliges Event aus allen abgespeicherten Events zugewiesen.
+     */
     public void startNewEvent(){
         actEvent = story.getAllEvents()[(int)(Math.random()*story.getAllEvents().length)];
     }
+
 
     public Event getActEvent(){
         return actEvent;

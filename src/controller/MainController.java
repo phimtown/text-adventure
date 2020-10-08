@@ -11,6 +11,9 @@ public class MainController {
 
     private Player player;
 
+    /*
+    Ein Objekt der Klasse MainController wird erzeugt und instanziiert ein Objekt der Klasse Player, MainFrame, StoryController und FightController.
+     */
     public MainController() {
         player = new Player("", 100, 3, 3);
 
@@ -20,6 +23,10 @@ public class MainController {
         fightController = new FightController(player, mainFrame);
     }
 
+    /*
+    Mit einer wahrscheinlichkeit von 90% wird die Methode startNewEvent im storyController aufgerufen, alle Buttons deaktiviert und die Einleitung des neuen Events im Textfeld ausgegeben.
+    Bei den anderen 10% wird eine neue Creature im fightController erschaffen und auch gekämpft. Danach wird die Methode checkForEnd  aufgerufen.
+     */
     public void startNewEvent(){
         if(Math.random()*100<90) {
             storyController.startNewEvent();
@@ -38,6 +45,9 @@ public class MainController {
         }
     }
 
+    /*
+    Es wird das Outcome von der gewählten antwort ausgegeben und daraufhin die stats des Spielers entsprechend verändert. Danach wird die Methode checkForEnd aufgerufen.
+     */
     public void answer(int answer){
         mainFrame.deactivateAllButtons();
         mainFrame.addText(storyController.getActEvent().getAllChoices()[answer-1].getChoiceOutcome());
@@ -61,6 +71,11 @@ public class MainController {
         checkForEnd();
     }
 
+    /*
+    Das Attribut eventsDone vom player wird um eins erhöht. Wenn die Leben des Spielers kleiner gleich null sind, wird die Methode end in mainFrame aufgerufen und als Parameter null übergeben.
+    Wenn die XP des Spielers größer gleich 1000 ist und eventsDone größer gleich 10, wird die Methode end in mainFrame aufgerufen und als Parameter eins übergeben.
+    Wenn nichts davon der Fall ist, wird die Methode startNewEvent aufgerufen.
+     */
     public void checkForEnd(){
         player.setEventsDone(player.getEventsDone()+1);
 
