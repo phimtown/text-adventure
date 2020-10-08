@@ -6,11 +6,13 @@ import java.awt.event.ActionListener;
 
 public class EndView {
 
+    //Formelemente
     private JPanel panel;
     private JButton startAgainButton;
     private JLabel statsLabel;
     private JLabel what;
 
+    //Referenzen
     private MainFrame mainFrame;
 
 

@@ -25,6 +25,12 @@ public class GameView {
     //Referenzen
     private MainController mainController;
 
+    /*
+    Ein Objekt der Klasse GameView wird erzeugt.
+    Die Referenz mainController wird dem entsprechendem Parameter gleichgesetzt.
+    Außerdem wird die Funktion loadPlayer aufgerufen und er Parameter p weitergegeben.
+    Zum Schluss wird noch die Funktion buttons aufgerufen.
+     */
     public GameView(MainController mainController, Player p) {
         this.mainController = mainController;
 
@@ -32,6 +38,10 @@ public class GameView {
         buttons();
     }
 
+    /*
+    Jedem der vier Buttons wird ein ActionListener zugefügt.
+    Wenn einer jetzt gedrückt wird, dann wird die Methode answer im mainController mit der jeweiligen Zahl des Buttons als Parameter.
+     */
     private void buttons() {
         a1Button.addActionListener(new ActionListener() {
             @Override
@@ -59,6 +69,9 @@ public class GameView {
         });
     }
 
+    /*
+    Die Label, die die Werte des Spielers anzeigen, werden erneut den Attributen von player gleichgesetzt.
+     */
     public void loadPlayer(Player player) {
         usernameLabel.setText(player.getUsername());
         atkLabel.setText(String.valueOf(player.getAtk()));
@@ -71,10 +84,17 @@ public class GameView {
         return panel;
     }
 
+    /*
+    Im Text des Textfeldes wird, in einer neuen Zeile, der Parameter text hinzugefügt.
+     */
     public void addText(String text){
         textOutput.setText(textOutput.getText()+text+"\n");
     }
 
+    /*
+    Bei allen vier Buttons wird die Methode setEnabled mit dem Parameter false ausgeführt.
+    Dadurch sind alle Buttons ausgegraut und die ActionListener reagieren nicht.
+     */
     public void deactivateAllButtons(){
         a1Button.setEnabled(false);
         a2Button.setEnabled(false);
@@ -82,6 +102,9 @@ public class GameView {
         a4Button.setEnabled(false);
     }
 
+    /*
+    Es wird der Button mit der jeweiligen Zahl, die dem Parameter i entspricht, wieder enabled.
+     */
     public void activateButton(int i){
         switch (i){
             case 1:
