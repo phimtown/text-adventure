@@ -1,7 +1,6 @@
 package view;
 
 import controller.MainController;
-import model.Player;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,6 +12,7 @@ public class StartView {
     private JButton startButton;
     private JButton exitButton;
     private JTextField usernameTextField;
+
     private MainFrame mainFrame;
     private MainController mainController;
 
@@ -33,6 +33,10 @@ public class StartView {
             public void actionPerformed(ActionEvent e) {
                 if(!usernameTextField.getText().isEmpty()) {
                     mainController.getPlayer().setUsername(usernameTextField.getText());
+                    mainController.getPlayer().setHp(100);
+                    mainController.getPlayer().setExp(0);
+                    mainController.getPlayer().setAtk(3);
+                    mainController.getPlayer().setDef(3);
                     mainFrame.play(mainController.getPlayer());
                 }
             }

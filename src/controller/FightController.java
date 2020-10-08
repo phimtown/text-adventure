@@ -10,13 +10,11 @@ public class FightController {
 
     private Creature creature;
     private Player player;
-    private MainController mainController;
     private MainFrame mainFrame;
 
 
-    public FightController(Player player, MainController mainController, MainFrame mainFrame){
+    public FightController(Player player, MainFrame mainFrame){
         this.player = player;
-        this.mainController = mainController;
         this.mainFrame = mainFrame;
     }
 
@@ -35,7 +33,8 @@ public class FightController {
 
     public void fight(){
         while(player.getHp()>0 && creature.getHp()>0){
-            mainFrame.addText("Der "+creature.getName()+" hat noch "+creature.getHp()+" Lebenspunkte.");
+            mainFrame.addText("\nDer "+creature.getName()+" hat noch "+creature.getHp()+" Lebenspunkte.");
+            mainFrame.addText("Du hast noch "+player.getHp()+" Lebenspunkte.");
             creature.setHp(creature.getHp()-(int)((Math.sqrt((player.getAtk()+creature.getDef())^2))*Math.random()*2));
             player.setHp(player.getHp()-(int)((Math.sqrt((creature.getAtk()+player.getDef())^2))*Math.random()*3));
             mainFrame.updatePlayer(player);

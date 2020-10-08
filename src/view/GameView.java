@@ -23,11 +23,9 @@ public class GameView {
     private JLabel expLabel;
 
     //Referenzen
-    private MainFrame mainFrame;
     private MainController mainController;
 
-    public GameView(MainFrame mainFrame, MainController mainController, Player p) {
-        this.mainFrame = mainFrame;
+    public GameView(MainController mainController, Player p) {
         this.mainController = mainController;
 
         this.loadPlayer(p);

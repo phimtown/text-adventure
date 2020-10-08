@@ -1,7 +1,7 @@
 ***
-Irgendeine dumme Einleitung
+Irgendeine dumme Einleitung 1
 **
-Eine Auswahlmöglichkeit...
+Eine Auswahlmöglichkeit... 1
 *
 Deine Wahl war...BESCHISSEN!
 #1
@@ -13,7 +13,7 @@ Deine Wahl war...BESCHISSEN!
 #4
 -3
 **
-Weitere Auswahl...
+Weitere Auswahl... 1
 *
 Die Wahl war super!
 #1
@@ -25,7 +25,45 @@ Die Wahl war super!
 #4
 +5
 **
-Dritte Auswahl...
+Dritte Auswahl... 1
+*
+Es passiert nichts.
+#1
+0
+#2
+0
+#3
+0
+#4
+0
+***
+Irgendeine dumme Einleitung 2
+**
+Eine Auswahlmöglichkeit... 2
+*
+Deine Wahl war...BESCHISSEN!
+#1
+-30
+#2
++10
+#3
++0
+#4
+-3
+**
+Weitere Auswahl... 2
+*
+Die Wahl war super!
+#1
++50
+#2
++40
+#3
++5
+#4
++5
+**
+Dritte Auswahl... 2
 *
 Es passiert nichts.
 #1

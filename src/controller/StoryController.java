@@ -13,14 +13,11 @@ public class StoryController {
     private File storyTXT;
     private Scanner in;
 
-    private MainController mainController;
     private Event actEvent;
 
-    public StoryController(MainController mainController) {
+    public StoryController() {
         storyTXT = new File("story.txt");
         story = new Story();
-
-        this.mainController = mainController;
     }
 
     public void getStoryFromTxt(){

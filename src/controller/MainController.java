@@ -12,12 +12,12 @@ public class MainController {
     private Player player;
 
     public MainController() {
-        player = new Player("", 100, 3, 3, 0);
+        player = new Player("", 100, 3, 3);
 
         mainFrame = new MainFrame(this, "Text Adventure!!", 800, 600);
-        storyController = new StoryController(this);
+        storyController = new StoryController();
         storyController.getStoryFromTxt();
-        fightController = new FightController(player, this, mainFrame);
+        fightController = new FightController(player, mainFrame);
     }
 
     public void startNewEvent(){
@@ -62,20 +62,24 @@ public class MainController {
     }
 
     public void checkForEnd(){
-        if(player.getHp()>0) {
-            mainFrame.addText("\n");
-            startNewEvent();
-        }else{
+        player.setEventsDone(player.getEventsDone()+1);
+
+        if(player.getHp()<=0) {
             String[] stats = new String[3];
             stats[0] = String.valueOf(player.getAtk());
             stats[1] = String.valueOf(player.getDef());
             stats[2] = String.valueOf(player.getExp());
-            mainFrame.end(stats);
+            mainFrame.end(stats, 0);
+        }else if(player.getExp()>=1000 && player.getEventsDone()>=10) {
+            String[] stats = new String[3];
+            stats[0] = String.valueOf(player.getAtk());
+            stats[1] = String.valueOf(player.getDef());
+            stats[2] = String.valueOf(player.getExp());
+            mainFrame.end(stats, 1);
+        }else{
+            mainFrame.addText("\n");
+            startNewEvent();
         }
-    }
-
-    public void setPlayer(Player player){
-        this.player = player;
     }
 
     public Player getPlayer(){

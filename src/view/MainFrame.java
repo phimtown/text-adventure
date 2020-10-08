@@ -39,7 +39,7 @@ public class MainFrame extends JFrame {
     }
 
     public void play(Player p){
-        gameView = new GameView(this, mainController, p);
+        gameView = new GameView(mainController, p);
         this.switchToPanel(gameView.getPanel());
         mainController.startNewEvent();
     }
@@ -48,9 +48,9 @@ public class MainFrame extends JFrame {
         this.switchToPanel(startView.getPanel());
     }
 
-    public void end(String[] stats) {
+    public void end(String[] stats, int a) {
         //String[] stats: [0] ATK, [1] DEF, [2] EXP
-        EndView endView = new EndView(this, mainController, stats);
+        EndView endView = new EndView(this, stats, a);
         this.switchToPanel(endView.getPanel());
     }
 
