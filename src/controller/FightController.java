@@ -36,13 +36,13 @@ public class FightController {
             mainFrame.addText("\nDer "+creature.getName()+" hat noch "+creature.getHp()+" Lebenspunkte.");
             mainFrame.addText("Du hast noch "+player.getHp()+" Lebenspunkte.");
             creature.setHp(creature.getHp()-(int)((Math.sqrt((player.getAtk()+creature.getDef())^2))*Math.random()*2));
-            player.setHp(player.getHp()-(int)((Math.sqrt((creature.getAtk()+player.getDef())^2))*Math.random()*3));
+            player.setHp(player.getHp()-(int)((Math.sqrt((creature.getAtk()+player.getDef())^2))*Math.random()*2));
             mainFrame.updatePlayer(player);
         }
         if(creature.getHp()<=0){
             int xp = (int)(Math.random()*100);
             player.setExp(player.getExp()+xp);
-            mainFrame.addText("Du hast den "+creature.getName()+" besiegt.");
+            mainFrame.addText("Du hast den "+creature.getName()+" besiegt und bekommst "+xp+" XP.");
         }
     }
 }
