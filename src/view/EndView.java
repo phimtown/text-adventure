@@ -31,7 +31,7 @@ public class EndView {
         }else{
             what.setText("You won!");
         }
-        statsLabel.setText("You've ended  with following stats:\n  ATK: " + stats[0] + "\n  DEF: " + stats[1] + "\n  EXP: " + stats[2]);
+        statsLabel.setText("You've ended with following stats:\n  ATK: " + stats[0] + "\n  DEF: " + stats[1] + "\n  EXP: " + stats[2]);
 
         createListeners();
     }
