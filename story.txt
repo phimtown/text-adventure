@@ -31,7 +31,7 @@ Der Oger fängt an zu tanzen! Das hast du toll gemacht!
 #1
 0
 #2
-0
+50
 #3
 0
 #4
@@ -57,7 +57,7 @@ Du findest eine Brücke
 #1
 0
 #2
-0
+50
 #3
 0
 #4
@@ -71,7 +71,7 @@ Er beschreibt dir mithilfe der Relativitätstheorie wie du es schaffst zu überl
 #1
 0
 #2
-0
+50
 #3
 0
 #4
