@@ -26,9 +26,9 @@ public class EndView {
      */
     public EndView(MainFrame mainFrame, String[] stats, int a) {
         this.mainFrame = mainFrame;
-        if(a == 0) {
+        if (a == 0) {
             what.setText("You've lost!");
-        }else{
+        } else {
             what.setText("You won!");
         }
         statsLabel.setText("You've ended with following stats:\n  ATK: " + stats[0] + "\n  DEF: " + stats[1] + "\n  EXP: " + stats[2]);

@@ -10,7 +10,7 @@ public class Player extends Creature {
     private String username;
 
     /*
-    Ein Objekt der Klasse Wolf wird erzeugt und übergibt hierbei die parameter in den Konstruktor von Creature.
+    Ein Objekt der Klasse Player wird erzeugt und übergibt hierbei die parameter in den Konstruktor von Creature.
     Die Attribute exp und eventsDone werden auf 0 gesetzt.
      */
     public Player(String username, int hp, int atk, int def){
@@ -49,3 +49,5 @@ public class Player extends Creature {
         this.eventsDone = eventsDone;
     }
 }
+
+
