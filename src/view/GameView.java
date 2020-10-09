@@ -23,47 +23,56 @@ public class GameView {
     private JLabel expLabel;
 
     //Referenzen
-    private MainFrame mainFrame;
     private MainController mainController;
-    private Player player;
 
-    public GameView(MainFrame mainFrame, MainController mainController, Player p) {
-        this.mainFrame = mainFrame;
+    /*
+    Ein Objekt der Klasse GameView wird erzeugt.
+    Die Referenz mainController wird dem entsprechendem Parameter gleichgesetzt.
+    Außerdem wird die Funktion loadPlayer aufgerufen und er Parameter p weitergegeben.
+    Zum Schluss wird noch die Funktion buttons aufgerufen.
+     */
+    public GameView(MainController mainController, Player p) {
         this.mainController = mainController;
-        this.player = p;
 
-        textOutput.setText(mainController.answer(0));
+        this.loadPlayer(p);
         buttons();
     }
 
+    /*
+    Jedem der vier Buttons wird ein ActionListener zugefügt.
+    Wenn einer jetzt gedrückt wird, dann wird die Methode answer im mainController mit der jeweiligen Zahl des Buttons als Parameter.
+     */
     private void buttons() {
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(1));
+                mainController.answer(1);
             }
         });
         a2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(2));
+                mainController.answer(2);
             }
         });
         a3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(3));
+                mainController.answer(3);
             }
         });
         a4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textOutput.setText(textOutput.getText() + "\n" + mainController.answer(4));
+                mainController.answer(4);
             }
         });
     }
 
-    private void loadPlayer() {
+    /*
+    Die Label, die die Werte des Spielers anzeigen, werden erneut den Attributen von player gleichgesetzt.
+     */
+    public void loadPlayer(Player player) {
         usernameLabel.setText(player.getUsername());
         atkLabel.setText(String.valueOf(player.getAtk()));
         defLabel.setText(String.valueOf(player.getDef()));
@@ -73,5 +82,43 @@ public class GameView {
 
     public JPanel getPanel() {
         return panel;
+    }
+
+    /*
+    Im Text des Textfeldes wird, in einer neuen Zeile, der Parameter text hinzugefügt.
+     */
+    public void addText(String text){
+        textOutput.setText(textOutput.getText()+text+"\n");
+    }
+
+    /*
+    Bei allen vier Buttons wird die Methode setEnabled mit dem Parameter false ausgeführt.
+    Dadurch sind alle Buttons ausgegraut und die ActionListener reagieren nicht.
+     */
+    public void deactivateAllButtons(){
+        a1Button.setEnabled(false);
+        a2Button.setEnabled(false);
+        a3Button.setEnabled(false);
+        a4Button.setEnabled(false);
+    }
+
+    /*
+    Es wird der Button mit der jeweiligen Zahl, die dem Parameter i entspricht, wieder enabled.
+     */
+    public void activateButton(int i){
+        switch (i){
+            case 1:
+                a1Button.setEnabled(true);
+                break;
+            case 2:
+                a2Button.setEnabled(true);
+                break;
+            case 3:
+                a3Button.setEnabled(true);
+                break;
+            case 4:
+                a4Button.setEnabled(true);
+                break;
+        }
     }
 }

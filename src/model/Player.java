@@ -1,44 +1,32 @@
 package model;
 
-public class Player {
+public class Player extends Creature {
 
+    //Attribute
+    private int exp;
+    private int eventsDone;
+
+    //Referenzen
     private String username;
-    private int hp, atk, def, exp;
 
-    public Player(String username, int hp, int atk, int def, int exp) {
-        this.hp = hp;
-        this.atk = atk;
-        this.def = def;
-        this.exp = exp;
-        this.username = username;
+    /*
+    Ein Objekt der Klasse Player wird erzeugt und übergibt hierbei die parameter in den Konstruktor von Creature.
+    Die Attribute exp und eventsDone werden auf 0 gesetzt.
+     */
+    public Player(String username, int hp, int atk, int def){
+        super(username, hp, atk, def);
+        this.exp = 0;
+        eventsDone = 0;
     }
 
-    public String getUsername() {
+    public String getUsername(){
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public int getHp() {
-        return hp;
-    }
-
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-
-    public int getAtk() {
-        return atk;
-    }
+    public void setUsername(String username) { this.username = username; }
 
     public void setAtk(int atk) {
         this.atk = atk;
-    }
-
-    public int getDef() {
-        return def;
     }
 
     public void setDef(int def) {
@@ -52,4 +40,14 @@ public class Player {
     public void setExp(int exp) {
         this.exp = exp;
     }
+
+    public int getEventsDone() {
+        return eventsDone;
+    }
+
+    public void setEventsDone(int eventsDone) {
+        this.eventsDone = eventsDone;
+    }
 }
+
+

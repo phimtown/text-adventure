@@ -1,9 +1,18 @@
-package Model;
+package model;
 
 public class Choice {
+
+    //Attribute
+    private int par1 = 0, par2 = 0, par3 = 0, par4 = 0;
+
+    //Referenzen
     private String choiceIntro = "";
     private String choiceOutcome = "";
-    private int par1 = 0, par2 = 0, par3 = 0, par4 = 0;
+
+    /*
+    Ein Objekt der Klasse choice wird erzeugt.
+     */
+    public Choice() {}
 
     public String getChoiceIntro() {
         return choiceIntro;
